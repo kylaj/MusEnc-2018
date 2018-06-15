@@ -30,7 +30,7 @@
    <script src="js/index.js"></script>
     <script>
       var xhr = new XMLHttpRequest()
-      xhr.open('GET', 'data/example.mei') // <-- change this to the right file
+      xhr.open('GET', 'data/Hensel-Gartenlieder.mei') // <-- change this to the right file
       xhr.send(null)
 
       /* Deal with the response */
@@ -41,7 +41,27 @@
           if (xhr.status === OK) {
             var parser = new DOMParser()
             var meiDoc = parser.parseFromString(xhr.responseText,"text/xml")
-            document.querySelector("#meta").innerHTML += meiDoc.querySelector("[*|id='titlesdfndsjkfbsjh']").textContent
+            document.querySelector("#meta").innerHTML += "<a href=\"" + meiDoc.querySelector("[*|id='m-8']").getAttribute('authURI') +"\">"
+            document.querySelector("#meta").innerHTML += "<h2>" + meiDoc.querySelector("[*|id='m-8']").textContent + "</h2></a>"
+
+            document.querySelector("#meta").innerHTML += "<a href=\"" + meiDoc.querySelector("[*|id='m-8a']").getAttribute('authURI') +"\">"
+            document.querySelector("#meta").innerHTML += "<h3>" + meiDoc.querySelector("[*|id='m-8a']").textContent +"</h3>"
+
+            document.querySelector("#meta").innerHTML += "<a href=\"" + meiDoc.querySelector("[*|id='workcreator']").getAttribute('authURI') +"\">"
+            document.querySelector("#meta").innerHTML += "<h3>composed by " + meiDoc.querySelector("[*|id='workcreator']").textContent +"</h3>"
+
+            document.querySelector("#meta").innerHTML += "<a href=\"" + meiDoc.querySelector("[*|id='worklyricist']").getAttribute('authURI') +"\">"
+            document.querySelector("#meta").innerHTML += "<h4>lyrics by " + meiDoc.querySelector("[*|id='worklyricist']").textContent +"</h4>"
+
+            document.querySelector("#meta").innerHTML += "<h4>edited by " + meiDoc.querySelector("[*|id='encoder2']").textContent + "</h4>"
+            document.querySelector("#meta").innerHTML += "<b>Genres</b><ul><li>" + meiDoc.querySelector("[*|id='genre-1']").textContent + "</li>"
+            document.querySelector("#meta").innerHTML += "<li>" + meiDoc.querySelector("[*|id='genre-2']").textContent + "</li>"
+            document.querySelector("#meta").innerHTML += "<li>" + meiDoc.querySelector("[*|id='genre-3']").textContent + "</li></ul>"
+            document.querySelector("#meta").innerHTML += "<b>Instrumentation</b><ul><li>" + meiDoc.querySelector("[*|id='perf1']").textContent + "</li>"
+            document.querySelector("#meta").innerHTML += "<li>" + meiDoc.querySelector("[*|id='perf2']").textContent + "</li>"
+            document.querySelector("#meta").innerHTML += "<li>" + meiDoc.querySelector("[*|id='perf3']").textContent + "</li>"
+            document.querySelector("#meta").innerHTML += "<li>" + meiDoc.querySelector("[*|id='perf4']").textContent + "</li></ul>"
+            document.querySelector("#meta").innerHTML += "<b>Language</b><ul><p><li>" + meiDoc.querySelector("[*|id='lang']").textContent + "</li></ul>"
           }
         }
       }

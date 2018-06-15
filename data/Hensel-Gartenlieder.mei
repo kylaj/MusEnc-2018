@@ -10,19 +10,22 @@
           <respStmt xml:id="m-11">
               <persName xml:id="m-12"/>
               <resp>Encoded by</resp>
-              <persName role="encoder">Kyla Jemison</persName>
+              <persName role="encoder" xml:id="encoder2">Kyla Jemison</persName>
           </respStmt>
       </titleStmt>
       <editionStmt> <!-- about the original source that you encoded-->
         <edition>
-        <title>Gartenlieder (1846)</title>
-        <title type="subtitle">
-          <identifier>Lockung, op. 3, no. 1</identifier>
-        </title>
-        <date>2018</date>
-        <pubPlace>[Place of publication not identified]</pubPlace>
-      </edition>
-        <edition>First encoding, via Sibelius to MEI plugin
+          <title>Gartenlieder (1846)</title>
+          <title type="subtitle">
+            <identifier>Lockung, op. 3, no. 1</identifier>
+          </title>
+          <respStmt>
+            <resp>Edited by</resp>
+            <persName authURI="http://www3.cpdl.org/wiki/index.php/User:Juliane_Claudi" authority="Choral Public Domain Library" xml:id="CPDLeditor" role="mrk">Juliane Claudi</persName>
+          </respStmt>
+          <date>2009-10-04</date>
+        </edition>
+        <edition>Encoding via Sibelius to MEI plugin
         <date>2018-06-12</date>
         <respStmt>
           <resp>Revised by</resp>
@@ -32,11 +35,11 @@
       </editionStmt>
       <pubStmt xml:id="m-13">
           <availability xml:id="m-14">
-              <useRestrict xml:id="m-15"/>
+              <useRestrict xml:id="m-15">Copyright: CPDL</useRestrict>
           </availability>
       </pubStmt>
   </fileDesc>
-  <extent unit="MBytes">346</extent>
+  <extent unit="MBytes">349</extent>
   <pubStmt> <!-- of this MEI file-->
     <publisher>
       <corpName>Digital Humanities Summer Institute</corpName>
@@ -49,7 +52,6 @@
         <geogName>Canada</geogName>
       </addrLine>
     </address>
-
     </pubStmt>
     <encodingDesc xml:id="m-16">
         <appInfo xml:id="m-17">
@@ -63,7 +65,7 @@
         <editorialDecl>
           <annot>2018-06-12 KJ used sib-mei.2.1.0 to convert provided Sibelius file into MEI, then ran MEI file through https://raffazizzi.github.io/refine-sibmei/ to clean it up.</annot>
           <annot>2018-06-13 KJ added links to youtube video at phrases.</annot>
-          <annot>2018-06-14 KJ added metadata to MEI header workDes.</annot>
+          <annot>2018-06-14 KJ added metadata and authority links to MEI header workDesc.</annot>
           <correction><!--make notes of corrections here --></correction>
           <segmentation><!--principals for setting up segments i.e movements --></segmentation>
         </editorialDecl>
@@ -72,12 +74,13 @@
         <source xml:id="header.sl">
           <titleStmt>
             <title xml:id="titlemain">Gartenlieder (1846)</title>
-            <title type="subtitle" xml:id="titlesubtitle">Lockung. Op. 3, No. 1</title>
+            <title type="subtitle" xml:id="titlesubtitle">Lockung. O
+              p. 3, No. 1</title>
           <respStmt>
-            <persName role="cmp" startdate="1805" enddate="1847">Fanny Hensel</persName>
+            <persName role="cmp" startdate="1805" enddate="1847" xml:id="composer">Fanny Hensel</persName>
           </respStmt>
           <respStmt>
-            <persName role="lyr" startdate="1788" enddate="1857">J. v. Eichendorff</persName>
+            <persName role="lyr" startdate="1788" enddate="1857" xml:id="lyricist">J. v. Eichendorff</persName>
           </respStmt>
         </titleStmt>
       </source>
@@ -87,31 +90,35 @@
             <titleStmt xml:id="m-7">
                 <respStmt xml:id="m-9"/>
                 <title authURI="https://lccn.loc.gov/no2009094900" authority="Library of Congress" xml:id="m-8">Gartenlieder (1846)</title>
-                <title authURI="https://lccn.loc.gov/no2011108556" authority ="Library of Congress" xml:id="m-8a">type="subtitle">Lockung. Op. 3, No. 1</title>/>
+                <title type="subtitle" authURI="https://lccn.loc.gov/no2011108556" authority ="Library of Congress" xml:id="m-8a">Lockung. Op. 3, No. 1</title>/>
                 <respStmt>
                   <persName role="cmp" startdate="1805" enddate="1847" authURI="http://viaf.org/viaf/2535006" authority="VIAF" xml:id="workcreator">Fanny Hensel</persName>
                 </respStmt>
                 <respStmt>
                   <persName role="lyr" startdate="1788" enddate="1857" authURI="http://viaf.org/viaf/7399816" authority="VIAF" xml:id="worklyricist">J. v. Eichendorff</persName>
                 </respStmt>
-                <genre authURI="http://id.loc.gov/authorities/genreForms/gf2014026984" authority="Library of Congress" xml:id="genre-1">Part songs</genre>
-                <genre authURI="http://id.loc.gov/authorities/subjects/sh85144102" authority="Library of Congress" xml:id="genre-2">Vocal quartets, Unaccompanied</genre>
-                                <!-- genre/form terms found online via http://id.loc.gov/authorities/genreForms.html-->
-                <perfMedium xml:id="perfmedium">
-                  <perfResList>
-                    <perfRes authURI="http://dbpedia.org/page/Soprano" authority="DBpedia">Soprano</perfRes>
-                    <perfRes authURI="http://dbpedia.org/page/Alto" authority="DBpedia">Alto</perfRes>
-                    <perfRes authURI="http://dbpedia.org/page/Tenor" authority="DBpedia">Tenor</perfRes>
-                    <perfRes authURI="http://dbpedia.org/page/Bass_(voice_type)" authority="DBpedia">Bass</perfRes>
-                  </perfResList>
-                </perfMedium>
               </titleStmt>
+              <genre authURI="http://id.loc.gov/authorities/genreForms/gf2014026984" authority="Library of Congress" xml:id="genre-1">Part songs</genre>
+              <genre authURI="http://id.loc.gov/authorities/subjects/sh85144102" authority="Library of Congress" xml:id="genre-2">Vocal quartets, Unaccompanied</genre>
+              <genre authURI="http://www3.cpdl.org/wiki/index.php/Category:Secular_music" authority="Choral Public Domain LIbrary" xml:id="genre-3">Secular</genre>
+              <perfMedium xml:id="perfmedium">
+                <perfResList>
+                  <perfRes authURI="http://dbpedia.org/page/Soprano" authority="DBpedia" xml:id="perf1">Soprano</perfRes>
+                  <perfRes authURI="http://dbpedia.org/page/Alto" authority="DBpedia" xml:id="perf2">Alto</perfRes>
+                  <perfRes authURI="http://dbpedia.org/page/Tenor" authority="DBpedia" xml:id="perf3">Tenor</perfRes>
+                  <perfRes authURI="http://dbpedia.org/page/Bass_(voice_type)" authority="DBpedia"  xml:id="perf4">Bass</perfRes>
+                </perfResList>
+              </perfMedium>
+              <langUsage>
+                <language xml:id="lang">German</language>
+              </langUsage>
         </work>
     </workDesc>
 </meiHead>
 <music xml:id="m-22">
+<!--temporary removal of all audio stuff
   <performance>
-    <!--fix this so it goes by verse tonight when it is quiet enough to hear it-->
+
       <recording begin="00:00:00.00" end="00:02:38.00" betype="time" n="completeWork">
           <avFile targettype="youtube" target="https://youtu.be/98utUIyMFmU"></avFile>
           <clip begin="00:00:00.00" end="00:00:11.00" betype="time" n="p1" startid="#m-42"></clip>
@@ -123,7 +130,7 @@
 
   </recording>
   </performance>
-
+-->
     <body xml:id="m-23">
         <mdiv xml:id="m-24">
             <score xml:id="m-25">
